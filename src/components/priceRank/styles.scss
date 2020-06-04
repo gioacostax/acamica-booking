@@ -3,9 +3,12 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-#main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
+.price-rank {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: rgba(63, 68, 74, 0.3);
+
+  span.filled {
+    color: #3f444a;
+  }
 }

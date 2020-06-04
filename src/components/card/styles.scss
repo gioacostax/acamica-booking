@@ -1,0 +1,68 @@
+/**
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;
+
+  background-color: #fff;
+  border-radius: 15px;
+
+  box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.1);
+
+  margin: 10px;
+
+  .info {
+    padding: 20px;
+  }
+
+  .details {
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  .price-rank {
+    margin-left: auto;
+  }
+
+  img {
+    height: 240px;
+    border-radius: 15px 15px 0 30px;
+  }
+  
+  h2 {
+    font-size: 22px;
+    font-weight: 900;
+    color: #3f444a;
+    margin: 2px 0 5px;
+  }
+  
+  p {
+    margin: 0;
+    color: #5b6167;
+    font-size: 0.9em;
+    line-height: 19px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  }
+  
+  button {
+    height: 40px;
+    width: 100%;
+  
+    border-radius: 9px;
+    border: 0;
+  
+    background-color: #000;
+  
+    color: #fff;
+  
+    font-size: 1em;
+    cursor: pointer;
+  }
+}

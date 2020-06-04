@@ -1,7 +1,7 @@
 {
-  "name": "react-kit",
+  "name": "acamica-booking",
   "version": "1.0.0",
-  "description": "React Starter Kit",
+  "description": "Proyecto - Reserva de alojamientos.",
   "scripts": {
     "start": "webpack-dev-server",
     "lint": "yarn lint:js && yarn lint:css",
@@ -16,7 +16,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com:gioacostax/react-kit.git"
+    "url": "https://github.com:gioacostax/acamica-booking.git"
   },
   "app": {
     "start_url": "/",
@@ -30,6 +30,7 @@
     "@babel/plugin-proposal-class-properties": "^7.10.1",
     "@babel/plugin-proposal-decorators": "^7.10.1",
     "@babel/plugin-proposal-export-default-from": "^7.10.1",
+    "@babel/plugin-proposal-optional-chaining": "^7.10.1",
     "@babel/preset-react": "^7.10.1",
     "@hot-loader/react-dom": "^16.13.0",
     "@types/react": "^16.9.35",
@@ -77,6 +78,12 @@
       "@babel/preset-react"
     ],
     "plugins": [
+      [
+        "@babel/plugin-proposal-optional-chaining",
+        {
+          "loose": true
+        }
+      ],
       "@babel/plugin-proposal-export-default-from",
       [
         "@babel/plugin-proposal-decorators",

@@ -4,18 +4,15 @@
  */
 
 import './styles';
-import { useState } from 'react';
-import { ThumbsUp } from 'blink/icons/the-icon-of';
+import { Card } from 'src/components';
+import hotelsData from '../../static/scripts/data.js';
 
 export default function Main() {
-  const [count, setCount] = useState(0);
-
   return (
     <div id="main">
-      <button type="button" onClick={() => setCount(count + 1)}>
-        {count} Likes
-        <ThumbsUp />
-      </button>
+      {
+        hotelsData.map((item) => <Card key={item.slug} info={item} />)
+      }
     </div>
   );
 }

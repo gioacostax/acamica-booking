@@ -3,9 +3,11 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-#main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
+.location-tag {
+  font-size: 0.85em;
+  color: #697077;
+
+  span {
+    margin-right: 4px;
+  }
 }
