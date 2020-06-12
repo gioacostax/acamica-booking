@@ -5,7 +5,7 @@
 
 #main {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1600px;
 }
