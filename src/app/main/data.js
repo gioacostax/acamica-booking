@@ -139,7 +139,7 @@ export default [
   {
     slug: 'ponta-dos-ganchos',
     name: 'Ponta dos Ganchos',
-    photo: './images/uxua-casa.jpg',
+    photo: './images/ponta-dos-ganchos.jpg',
     description: 'Ubicado a pasos de San Pablo, Río de Janeiro, e incluso Buenos Aires, en una península privada y rodeado por un pintoresco pueblo de pescadores, se encuentra Ponta dos Ganchos, uno de los resorts de playa más exclusivos del sur de Brasil.',
     availabilityFrom: today.valueOf() + 432000000, // 5 days
     availabilityTo: today.valueOf() + 864000000, // 10 days

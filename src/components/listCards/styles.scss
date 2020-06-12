@@ -3,9 +3,9 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-#main {
+.list-cards {
   display: flex;
-  align-items: center;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
+  max-width: 1600px;
 }
