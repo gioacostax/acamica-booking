@@ -4,6 +4,7 @@
  */
 
 import './styles';
+import React from 'react';
 
 export default function Filters({
   onFilterChange = () => {},
@@ -14,7 +15,7 @@ export default function Filters({
   size = 0
 }) {
   return (
-    <div className="filters">
+    <div id="filters">
       <input value={fromDate} onChange={onFilterChange} name="fromDate" type="date" className="textfield date" />
       <input value={toDate} onChange={onFilterChange} name="toDate" type="date" className="textfield date" />
       <select value={country} onChange={onFilterChange} name="country" className="select country">

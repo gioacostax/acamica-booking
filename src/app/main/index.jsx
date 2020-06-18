@@ -4,9 +4,12 @@
  */
 
 import './styles';
-import { useEffect, useState } from 'react';
-import { ListCards, Filters } from 'src/components';
+import React, { useEffect, useState } from 'react';
+import { format } from 'fecha';
 import hotelsData from './data.js';
+import Header from './header';
+import Filters from './filters';
+import ListCards from './listCards';
 
 // Función que convierte número de cuartos a un rango de tamaños de 1, 2 o 3
 const getSize = (size) => {
@@ -28,25 +31,13 @@ const validDate = (availabilityFrom, from, availabilityTo, to) => {
   return false;
 };
 
-// Función que retorna el formato de fecha en un lenguaje familiar
-const formatDate = (dateISO) => {
-  const date = new Date(`${dateISO} GMT-${new Date().getTimezoneOffset() / 60}`);
-  const days = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
-  const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
-  const day = days[date.getDay()];
-  const month = months[date.getMonth()];
-
-  return `${day}, ${date.getDate()} de ${month} de ${date.getFullYear()}`;
-};
-
 export default function Main() {
-  const dateNow = new Date();
   const [list, setList] = useState(hotelsData);
   const [filter, setFilter] = useState({
     // Por defecto la fecha de inicio con formato 'YYYY-MM-DD'
-    fromDate: `${dateNow.getFullYear()}-${`0${dateNow.getMonth() + 1}`.slice(-2)}-${`0${dateNow.getDate()}`.slice(-2)}`,
+    fromDate: format(Date.now(), 'isoDate'),
     // Por defecto la fecha de finalización termina 10 días después con formato 'YYYY-MM-DD'
-    toDate: `${dateNow.getFullYear()}-${`0${dateNow.getMonth() + 1}`.slice(-2)}-${`0${dateNow.getDate() + 10}`.slice(-2)}`,
+    toDate: format(new Date(Date.now().valueOf() + 864000000), 'isoDate'),
     country: '-',
     price: 0,
     size: 0
@@ -83,7 +74,7 @@ export default function Main() {
     // Si la etiqueta corresponde a 'price' o 'size' convertimos a entero su valor
     if (e.target.name === 'price' || e.target.name === 'size') value = parseInt(value, 10);
     // eslint-disable-next-line prefer-destructuring
-    if ((e.target.type === 'date') && value === '') value = new Date().toISOString().split('T')[0];
+    if ((e.target.type === 'date') && value === '') value = format(new Date(), 'isoDate');
 
     // Actualizamos estado de filtros
     setFilter({
@@ -94,8 +85,7 @@ export default function Main() {
 
   return (
     <div id="main">
-      <h1>Hoteles</h1>
-      <p>desde el {formatDate(filter.fromDate)} hasta el {formatDate(filter.toDate)}</p>
+      <Header fromDate={filter.fromDate} toDate={filter.toDate} />
       <Filters
         onFilterChange={handleFilter}
         fromDate={filter.fromDate}

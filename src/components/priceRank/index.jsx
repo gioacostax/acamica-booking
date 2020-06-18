@@ -4,6 +4,7 @@
  */
 
 import './styles';
+import React from 'react';
 
 export default React.memo(function PriceRank({ value }) {
   return (

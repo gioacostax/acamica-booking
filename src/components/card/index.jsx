@@ -4,7 +4,8 @@
  */
 
 import './styles';
-import { PriceRank, RoomsTag, LocationTag } from 'src/components';
+import React from 'react';
+import { PriceRank, RoomsTag, LocationTag, AvailabilityTag } from 'src/components';
 
 export default function Card({ info }) {
   return (
@@ -18,6 +19,7 @@ export default function Card({ info }) {
           <RoomsTag value={info.rooms} />
           <PriceRank value={info.price} />
         </div>
+        <AvailabilityTag from={info.availabilityFrom} to={info.availabilityTo} />
         <button type="button">Reservar</button>
       </div>
     </div>

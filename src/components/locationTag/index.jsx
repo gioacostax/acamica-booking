@@ -4,6 +4,7 @@
  */
 
 import './styles';
+import React from 'react';
 
 const flags = [
   { name: 'Argentina', emoji: '🇦🇷' },

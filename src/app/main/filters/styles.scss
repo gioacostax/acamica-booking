@@ -1,0 +1,17 @@
+/**
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+#filters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  height: 50px;
+
+  input,
+  select {
+    margin: 0 5px;
+  }
+}

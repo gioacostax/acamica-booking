@@ -3,10 +3,14 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-.filters {
+#list {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  
-  height: 50px;
+  max-width: 1600px;
+
+  .empty-list {
+    margin-top: 50px;
+    color: #777777;
+  }
 }
