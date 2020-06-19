@@ -50,10 +50,10 @@ export default function Main() {
       return (
         // Filtramos por rango de fecha
         validDate(
-          item.availabilityFrom,
-          new Date(filter.fromDate).valueOf(),
-          item.availabilityTo,
-          new Date(filter.toDate).valueOf()
+          new Date(format(new Date(item.availabilityFrom), 'YYYY[/]MM[/]DD')).valueOf(),
+          new Date(filter.fromDate.replace(/-/gi, '/')).valueOf(),
+          new Date(format(new Date(item.availabilityTo), 'YYYY[/]MM[/]DD')).valueOf(),
+          new Date(filter.toDate.replace(/-/gi, '/')).valueOf()
         )
         // Filtramos por pais ('-' es igual a todos los paises)
         && ((item.country === filter.country) || filter.country === '-')

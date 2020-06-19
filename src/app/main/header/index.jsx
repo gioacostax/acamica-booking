@@ -12,7 +12,8 @@ const formatDate = (dateISO) => {
   const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
   const days = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
 
-  return format(new Date(dateISO), 'dddd[,] DD [de] MMMM [de] YYYY', {
+  // Convertimos fecha tipo '2020-06-06' a '2020/06/06' para darle el formato adecuado
+  return format(new Date(dateISO.replace(/-/gi, '/')), 'dddd[,] DD [de] MMMM [de] YYYY', {
     monthNames: months,
     dayNames: days
   });
@@ -21,8 +22,10 @@ const formatDate = (dateISO) => {
 export default function Header({ fromDate, toDate }) {
   return (
     <div id="header">
-      <h1>Hoteles</h1>
-      <p>desde el {formatDate(fromDate)} hasta el {formatDate(toDate)}</p>
+      <div className="bg">
+        <h1>Hoteles</h1>
+        <p>desde el {formatDate(fromDate)} hasta el {formatDate(toDate)}</p>
+      </div>
     </div>
   );
 }
