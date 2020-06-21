@@ -5,6 +5,7 @@
 
 import './styles';
 import React from 'react';
+import { Conifer } from 'blink/icons/the-icon-of';
 import { Card } from 'src/components';
 
 export default function ListCards({ cards = [] }) {
@@ -13,7 +14,7 @@ export default function ListCards({ cards = [] }) {
       {
         cards.length > 0
           ? cards.map((item) => <Card key={item.slug} info={item} />)
-          : <div className="empty-list">No hay hoteles disponibles</div>
+          : <div className="empty-list"><Conifer />No hay hoteles disponibles con los parametros de búsqueda seleccionados</div>
       }
     </div>
   );

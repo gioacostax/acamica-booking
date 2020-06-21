@@ -2,18 +2,44 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
+ 
+/* stylelint-disable */
 
 #filters {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   
-  height: 50px;
+  padding: 5px;
+  box-sizing: border-box;
   width: 100%;
-  background-color: #000;
+  background-color: #000000;
 
-  input,
-  select {
-    margin: 0 5px;
+  @media (max-width: 500px) {
+    .Select,
+    .MuiTextField-root {
+      width: 100%;
+    }
+  }
+
+  .MuiInput-root {
+    margin: 10px;
+  }
+
+  .MuiInput-underline::before {
+    border-bottom: 1px solid #fff;
+  }
+
+  .MuiInputBase-root {
+    color: #fff;
+
+    svg {
+      color: #fff;
+    }
+  }
+
+  option {
+    color: #000;
   }
 }
