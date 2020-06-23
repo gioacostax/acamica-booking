@@ -6,7 +6,7 @@
 import './styles';
 import React, { useEffect, useState } from 'react';
 import { format } from 'fecha';
-import hotelsData from '../../static/data.js';
+import hotelsData from './data.js';
 import Header from './header';
 import Filters from './filters';
 import ListCards from './listCards';
